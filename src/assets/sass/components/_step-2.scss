@@ -1,0 +1,66 @@
+.plan {
+  &_box {
+    &es {
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+      @include respond(phone) {
+        flex-direction: column;
+        padding-top: 2.4rem;
+      }
+    }
+    border: 0.1rem solid $Cool-gray;
+    border-radius: 0.6rem;
+    padding: 2.4rem 0 1.2rem 1.6rem;
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    @include respond(phone) {
+      flex-direction: row;
+      width: 86%;
+      margin: 0 7%;
+      gap: 1.2rem;
+      padding: 1.4rem;
+    }
+  }
+
+  &_data {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+  &_name {
+    color: $Marine-blue;
+    font-weight: 700;
+  }
+  &_pricing {
+    font-weight: 400;
+    color: $Cool-gray;
+  }
+}
+.plan {
+  &-switch-box {
+    background-color: $Magnolia;
+    border-radius: 0.6rem;
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    margin: 3.2rem auto 0;
+    justify-content: center;
+    padding: 1.4rem 0;
+    border-radius: 0.6rem;
+    @include respond(phone) {
+      margin: 8% 7% 10%;
+      gap: 1.5rem;
+    }
+  }
+  &-duration {
+    color: $Cool-gray;
+    font-weight: 700;
+    &_active {
+      color: $Marine-blue;
+    }
+  }
+}

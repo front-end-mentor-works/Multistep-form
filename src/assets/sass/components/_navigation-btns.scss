@@ -1,0 +1,43 @@
+.navigation-btns {
+  position: absolute;
+  right: 9.6rem;
+  bottom: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 19rem;
+  @include respond(phone) {
+    background-color: $White;
+    padding: 6% 4%;
+    margin: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+  }
+}
+.btn_next,
+.btn_back,
+.btn_confirm {
+  padding: 1.2rem 1.6rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+}
+.btn_next {
+  color: $Light-gray;
+  background-color: $Marine-blue;
+}
+.btn_confirm {
+  color: #fff;
+  background-color: $Purplish-blue;
+}
+.btn_back {
+  color: $Cool-gray;
+  font-weight: 700;
+  background-color: $White;
+  @include respond(phone) {
+    padding-left: 0.6rem;
+  }
+}
