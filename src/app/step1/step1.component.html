@@ -3,25 +3,56 @@
   <p class="heading-desc">
     Please provide your name, email address, and phone number.
   </p>
-  <form action="#" class="step_1-form form">
+  <form action="#" class="step_1-form form" #f="ngForm">
     <div class="form_group">
       <label for="uname" class="form_label">Name</label>
-      <input type="text" placeholder="e.g.Stephen King" class="form_control" />
+      <span *ngIf="invalidName" class="invalid-msg"
+        >This field is required</span
+      >
+      <input
+        type="text"
+        placeholder="e.g.Stephen King"
+        [(ngModel)]="user.name"
+        name="uname"
+        id="uname"
+        class="form_control"
+        [class.form_control-invalid]="invalidName"
+      />
     </div>
     <div class="form_group">
-      <label for="uname" class="form_label">Email Address</label>
+      <label for="email" class="form_label">Email Address</label>
+      <span *ngIf="invalidEmail" class="invalid-msg"
+        >This field is required</span
+      >
       <input
         type="email"
         placeholder="e.g. stephenking@lorem.com"
         class="form_control"
+        [(ngModel)]="user.email"
+        name="email"
+        id="email"
+        [class.form_control-invalid]="invalidEmail"
       />
     </div>
     <div class="form_group">
-      <label for="uname" class="form_label">Name</label>
-      <input type="text" placeholder="e.g. +234 567 890" class="form_control" />
+      <label for="phone" class="form_label">Phone</label>
+      <span *ngIf="invalidPhone" class="invalid-msg"
+        >This field is required</span
+      >
+      <input
+        type="text"
+        [(ngModel)]="user.phone"
+        name="phone"
+        id="phone"
+        placeholder="e.g. +234 567 890"
+        class="form_control"
+        [class.form_control-invalid]="invalidPhone"
+      />
     </div>
   </form>
-  <div class="navigation-btns">
-    <button class="btn_next">Next Step</button>
-  </div>
+
+  <app-navigation-btn
+    (next)="submitForm()"
+    [showGoBackBtn]="false"
+  ></app-navigation-btn>
 </section>

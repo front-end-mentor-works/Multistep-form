@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './app-store/app.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +17,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     FormsModule,
     SidebarComponent,
     BrowserModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

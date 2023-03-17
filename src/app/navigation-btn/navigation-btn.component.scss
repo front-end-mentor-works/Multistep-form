@@ -1,3 +1,6 @@
+@import "./../../assets/sass/abstracts//mixins";
+@import "./../../assets/sass/abstracts/variables";
+
 .navigation-btns {
   position: absolute;
   right: 9.6rem;
@@ -18,12 +21,15 @@
 .btn_next,
 .btn_back,
 .btn_confirm {
-  padding: 1.2rem 1.6rem;
+  padding: 1.6rem 2.4rem;
   border: none;
   border-radius: 0.6rem;
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   letter-spacing: 0.1rem;
+  &:hover {
+    cursor: pointer;
+  }
 }
 .btn_next {
   color: $Light-gray;

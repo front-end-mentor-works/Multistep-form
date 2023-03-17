@@ -1,0 +1,74 @@
+@import "./../../assets/sass/abstracts//mixins";
+@import "./../../assets/sass/abstracts/variables";
+.step_1 {
+  .navigation-btns {
+    @include respond(phone) {
+      padding-left: 64%;
+    }
+  }
+
+  .form {
+    padding: 0 0 6.4rem;
+    @include respond(phone) {
+      padding: 2rem 2rem 3.2rem;
+    }
+    &_group {
+      position: relative;
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+        @include respond(phone) {
+          margin-bottom: 1.4rem;
+        }
+      }
+    }
+    &_label {
+      display: block;
+      color: $Marine-blue;
+      margin-bottom: 0.6rem;
+      @include respond(phone) {
+        font-weight: 500;
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
+      }
+    }
+    .invalid-msg {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      right: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: $Strawberry-red;
+    }
+    &_control {
+      border: 0.3px solid rgba($Light-gray, 1);
+      border-radius: 0.6rem;
+      outline: none;
+      width: 100%;
+      padding: 0.4rem 1rem;
+      height: 4rem;
+      &:hover {
+        cursor: pointer;
+      }
+      &::placeholder {
+        color: $Cool-gray;
+        font-size: 1.6rem;
+        font-weight: 500;
+        @include respond(phone) {
+          font-weight: 700;
+          font-size: 14px;
+        }
+      }
+      &-invalid {
+        border-color: $Strawberry-red;
+      }
+    }
+  }
+}
+
+.form_label {
+  font-size: 1.6rem;
+}
+.form_control {
+  height: 6rem;
+}

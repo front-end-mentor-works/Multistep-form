@@ -1,0 +1,9 @@
+<div
+  class="navigation-btns"
+  [ngStyle]="{
+    'justify-content': showGoBackBtn ? 'space-between' : 'flex-end'
+  }"
+>
+  <button *ngIf="showGoBackBtn" class="btn_back">Go Back</button>
+  <button class="btn_next">{{ btn2Text }}</button>
+</div>

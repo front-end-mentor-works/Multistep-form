@@ -1,9 +1,5 @@
 <div class="container">
-  <app-sidebar
-    [activeStep]="currentStep"
-    (selectedStep)="goToStep($event)"
-    style="width: 25%"
-  ></app-sidebar>
+  <app-sidebar [activeStep]="currentStep" style="width: 25%"></app-sidebar>
   <main class="main">
     <router-outlet></router-outlet>
     <!-- <app-step1></app-step1> -->
