@@ -1,5 +1,5 @@
-@import "./../../assets/sass/abstracts//mixins";
 @import "./../../assets/sass/abstracts/variables";
+@import "./../../assets/sass/abstracts//mixins";
 .step_1 {
   .navigation-btns {
     @include respond(phone) {
@@ -24,7 +24,7 @@
     &_label {
       display: block;
       color: $Marine-blue;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.8rem;
       @include respond(phone) {
         font-weight: 500;
         font-size: 1.4rem;
@@ -46,9 +46,10 @@
       outline: none;
       width: 100%;
       padding: 0.4rem 1rem;
-      height: 4rem;
+      height: 6.4rem;
       &:hover {
         cursor: pointer;
+        border-color: $Purplish-blue;
       }
       &::placeholder {
         color: $Cool-gray;

@@ -8,6 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './app-store/app.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { PlanEffects } from './step2/store/step2.effects';
+import { addonEffects } from './step3/store/step3.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +23,7 @@ import { reducers, metaReducers } from './app-store/app.reducer';
     StoreModule.forRoot(reducers, {
       metaReducers,
     }),
+    EffectsModule.forRoot([PlanEffects,addonEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],

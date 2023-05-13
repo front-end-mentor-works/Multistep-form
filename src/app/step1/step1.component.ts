@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import * as fromApp from '../app-store/app.reducer';
-import * as step1Actions from './store/step1.actions';
+import {AppState} from '../app-store/app.reducer';
+import {step1Submit} from './store/step1.actions';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { NavigationBtnComponent } from '../navigation-btn/navigation-btn.component';
@@ -21,7 +21,7 @@ export class Step1Component implements OnInit, OnDestroy {
   step1Sub$: Subscription;
 
   constructor(
-    private store: Store<fromApp.AppState>,
+    private store: Store<AppState>,
     private _router: Router
   ) {}
   ngOnDestroy(): void {
@@ -66,9 +66,8 @@ export class Step1Component implements OnInit, OnDestroy {
     }
     const invalidForm =
       this.invalidEmail || this.invalidName || this.invalidPhone;
-    if (invalidForm) {
-      return false;
-    } else {
+    if (invalidForm) return false;
+    else {
       this.invalidName = '';
       this.invalidPhone = '';
       this.invalidEmail = '';
@@ -80,7 +79,7 @@ export class Step1Component implements OnInit, OnDestroy {
 
     const data = { ...this.user, error: !isValidForm };
     console.log('form validity  ', isValidForm, '   ', data);
-    this.store.dispatch(step1Actions.step1Submit(data));
+    this.store.dispatch(step1Submit(data));
     // this.slForm.reset();
     if (isValidForm) {
       this._router.navigateByUrl(`/step-2`);

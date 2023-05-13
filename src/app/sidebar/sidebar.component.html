@@ -1,4 +1,4 @@
-<div style="width: 100%" class="sidebar">
+<div class="sidebar">
   <div class="steps">
     <ng-container *ngFor="let step of steps; let index = index">
       <div class="step">
@@ -12,7 +12,7 @@
           {{ index + 1 }}
         </div>
         <div class="step_head">
-          <p class="step_head-sub">Step{{ index + 1 }}</p>
+          <h2 class="step_head-sub">Step{{ index + 1 }}</h2>
           <h4 class="step_head-main">{{ step }}</h4>
         </div>
       </div>

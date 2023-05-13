@@ -11,6 +11,7 @@ import { Input, Component, Output, EventEmitter } from '@angular/core';
 export class NavigationBtnComponent {
   @Input() showGoBackBtn = true;
   @Input() btn2Text = 'Next Step';
+  @Input() bgColor = '';
   @Output() back = new EventEmitter<void>();
   @Output() next = new EventEmitter<void>();
 }

@@ -7,8 +7,7 @@
   bottom: 2.4rem;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  padding-left: 19rem;
+  width: 75%;
   @include respond(phone) {
     background-color: $White;
     padding: 6% 4%;
@@ -30,6 +29,9 @@
   &:hover {
     cursor: pointer;
   }
+}
+.btn_confirm:hover {
+  opacity: 0.5;
 }
 .btn_next {
   color: $Light-gray;

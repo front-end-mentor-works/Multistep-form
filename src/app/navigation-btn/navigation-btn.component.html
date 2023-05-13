@@ -4,6 +4,14 @@
     'justify-content': showGoBackBtn ? 'space-between' : 'flex-end'
   }"
 >
-  <button *ngIf="showGoBackBtn" class="btn_back">Go Back</button>
-  <button class="btn_next">{{ btn2Text }}</button>
+  <button *ngIf="showGoBackBtn" class="btn_back" (click)="back.next()">
+    Go Back
+  </button>
+  <button
+    [ngStyle]="{ 'background-color': bgColor }"
+    class="btn_next"
+    (click)="next.next()"
+  >
+    {{ btn2Text }}
+  </button>
 </div>

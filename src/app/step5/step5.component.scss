@@ -1,0 +1,30 @@
+@import "./../../assets/sass/abstracts/variables";
+@import "./../../assets/sass/abstracts/mixins";
+
+.step_5 {
+  padding-top: 20%;
+  text-align: center;
+  .thankyou_icon {
+    @include respond(phone) {
+      height: 6.4rem;
+    }
+    &-box {
+      margin-bottom: 2.4rem;
+    }
+  }
+  .heading-primary {
+    margin-bottom: 1.6rem !important;
+    @include respond(phone) {
+      padding-top: 0 !important;
+    }
+  }
+
+  .success_text {
+    color: $Cool-gray;
+    padding: 0 3.2rem;
+    font-weight: 400;
+    @include respond(phone) {
+      padding: 0 1.6rem 25%;
+    }
+  }
+}

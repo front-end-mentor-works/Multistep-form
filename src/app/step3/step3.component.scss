@@ -1,33 +1,29 @@
-@import "./../../assets/sass/abstracts//mixins";
 @import "./../../assets/sass/abstracts/variables";
+@import "./../../assets/sass/abstracts//mixins";
 
 .addon-box {
   &es {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 1.8rem;
     @include respond(phone) {
       padding: 1.6rem 2.4rem 0;
     }
   }
   display: flex;
-  padding: 1.6rem 0;
+  padding: 2rem 0;
   border-radius: 0.6rem;
   border: 0.1rem solid $Cool-gray;
-  &.active {
-    border: 0.13rem solid $Purplish-blue;
+  &.active,&:hover {
+    border: 0.15rem solid $Purplish-blue !important;
   }
   .checkbox {
-    &-container {
-      width: 15%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
     &-addon {
       accent-color: $Purplish-blue;
-      width: 1.6rem;
-      height: 1.6rem;
+      height: 2rem;
+      width: 15%;
+      display: inline-block;
+      margin: auto;
     }
   }
   .details {
@@ -38,76 +34,9 @@
       color: $Marine-blue;
       margin-bottom: 0.6rem;
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.9rem;
       @include respond(phone) {
-        margin-bottom: 0.3rem;
-      }
-    }
-    .benefit {
-      color: $Cool-gray;
-      @include respond(phone) {
-        font-size: 1.3rem;
-      }
-    }
-  }
-  .pricing {
-    width: 15%;
-    display: flex;
-    align-items: center;
-    color: $Purplish-blue;
-    font-weight: 400;
-    font-size: 1.6rem;
-    @include respond(phone) {
-      font-size: 1.3rem;
-      font-weight: 500;
-      width: 20%;
-    }
-  }
-}
-input[type="checkbox"]:checked {
-  filter: none;
-}
-
-.addon-box {
-  &es {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    @include respond(phone) {
-      padding: 1.6rem 2.4rem 0;
-    }
-  }
-  display: flex;
-  padding: 1.6rem 0;
-  border-radius: 0.6rem;
-  border: 0.1rem solid $Cool-gray;
-  &.active {
-    border: 0.13rem solid $Purplish-blue;
-  }
-  .checkbox {
-    &-container {
-      width: 15%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    &-addon {
-      accent-color: $Purplish-blue;
-      width: 1.6rem;
-      height: 1.6rem;
-    }
-  }
-  .details {
-    width: 70%;
-    @include respond(phone) {
-    }
-    .name {
-      color: $Marine-blue;
-      margin-bottom: 0.6rem;
-      font-weight: 700;
-      font-size: 1.5rem;
-      @include respond(phone) {
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.4rem;
       }
     }
     .benefit {

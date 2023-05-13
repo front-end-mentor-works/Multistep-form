@@ -2,57 +2,36 @@
   <h1 class="heading-primary">Pick add-ons</h1>
   <p class="heading-desc">Add-ons help enhance your gaming experience.</p>
   <div class="addon-boxes">
-    <div class="addon-box">
-      <div class="checkbox-container">
+    <ng-container *ngFor="let addon of addonList">
+      <div
+        class="addon-box"
+        [ngClass]="{
+          active: addon.active
+        }"
+        (click)="selectAddon(addon)"
+      >
         <input
           class="checkbox-addon"
           type="checkbox"
           name="online-service"
-          id="check-box-online-service
-              
-              
-              
-              "
+          id="check-box-online-service"
+          [checked]="addon.active"
         />
-      </div>
 
-      <div class="details">
-        <p class="name">Online service</p>
-        <p class="benefit">Access to multiplayer games</p>
+        <div class="details">
+          <p class="name">{{ addon?.name }}</p>
+          <p class="benefit">
+            {{ addon?.text }}
+          </p>
+        </div>
+        <span class="pricing"> +{{ addon?.price }} </span>
       </div>
-      <span class="pricing"> +$1/mo </span>
-    </div>
-    <div class="addon-box">
-      <div class="checkbox-container">
-        <input
-          class="checkbox-addon"
-          type="checkbox"
-          name="larger-storage"
-          id="check-box-large-storage"
-        />
-      </div>
-      <div class="details">
-        <p class="name">Larger storage</p>
-        <p class="benefit">Extra 1TB of cloud save</p>
-      </div>
-      <span class="pricing"> +$2/mo </span>
-    </div>
-    <div class="addon-box active">
-      <div class="checkbox-container">
-        <input
-          class="checkbox-addon"
-          type="checkbox"
-          name="custom-profile"
-          id="check-box-custom-profile"
-        />
-      </div>
-      <div class="details">
-        <p class="name">Customizable Profile</p>
-        <p class="benefit">Custom theme on your profile</p>
-      </div>
-      <span class="pricing"> +$2/mo </span>
-    </div>
+    </ng-container>
   </div>
 
-  <app-navigation-btn></app-navigation-btn>
+  <app-navigation-btn
+  
+  (back)="goToStep2()"
+    (next)="goToStep4()"
+  ></app-navigation-btn>
 </section>

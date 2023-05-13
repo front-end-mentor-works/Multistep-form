@@ -8,25 +8,32 @@
     <div class="item_list">
       <div class="item plan">
         <div class="data">
-          <span class="name">Arcade(Monthly)</span>
-          <a class="change-link" href="#">Change</a>
+          <span class="name">{{ selectedPlan?.name }}({{ planType }})</span>
+          <a class="change-link" [routerLink]="['/step-2']"  >Change</a>
         </div>
-        <div class="price">$9/mo</div>
+        <div class="price">{{ selectedPlan?.price }}</div>
       </div>
-      <div class="addon item">
-        <span class="name">Online service</span>
-        <span class="price">+$1/mo</span>
-      </div>
-      <div class="addon item">
-        <span class="name">Larger storage</span>
-        <span class="price">+$2/mo</span>
-      </div>
+      <ng-container *ngFor="let addon of selectedAddons">
+        <div class="addon item">
+          <span class="name">{{ addon.name }}</span>
+          <span class="price">+{{ addon.price }}</span>
+        </div>
+      </ng-container>
     </div>
     <div class="total">
-      <span class="txt">Total (per month)</span>
-      <span class="price">+$12/mo</span>
+      <span class="txt"
+        >Total (per {{ planType === "monthly" ? "month" : "year" }})</span
+      >
+      <span class="price"
+        >+${{ total }}/{{ planType === "monthly" ? "mo" : "yr" }}</span
+      >
     </div>
   </div>
 
-  <app-navigation-btn [btn2Text]="'confirm'"></app-navigation-btn>
+  <app-navigation-btn
+    [btn2Text]="'confirm'"
+    [bgColor]="'#473dff'"
+    (next)="confirm()"
+    (back)="backToAddon()"
+  ></app-navigation-btn>
 </section>
