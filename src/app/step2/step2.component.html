@@ -5,9 +5,7 @@
     <ng-container *ngFor="let plan of plans[currentPlanType]">
       <div
         class="plan_box"
-        [ngStyle]="{
-          'border-color': plan.name === selectedPlan?.name ? '#473dff' : '#9699ab'
-        }"
+        [ngClass]="{ active: plan.name === selectedPlan?.name }"
         (click)="selectPlan(plan)"
       >
         <div class="plan_icon-box">
@@ -20,11 +18,10 @@
         <div class="plan_data">
           <p class="plan_name">{{ plan.name }}</p>
           <p class="plan_pricing">{{ plan.price }}</p>
-          <p class="plan_text">{{ plan.text }}</p>
+          <p class="plan_text" *ngIf="plan.text">{{ plan.text }}</p>
         </div>
       </div>
     </ng-container>
-   
   </div>
   <div class="plan-switch-box">
     <span class="plan-duration plan-duration_active">Monthly</span>

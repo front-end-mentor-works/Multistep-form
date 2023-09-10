@@ -27,8 +27,12 @@
         font-weight: 500;
         color: $Marine-blue;
       }
+      .data .name {
+        color: $Marine-blue;
+      }
       .name {
-        font-weight: 500;
+        font-weight: 400;
+        color: #b6c0db;
       }
       &.plan {
         color: $Marine-blue;
@@ -43,16 +47,17 @@
         }
 
         .change-link {
-          color: $Cool-gray;
+          color: #b6c0db;
+
           font-weight: 400;
           font-size: 1.6rem;
           display: inline-block;
           text-decoration: none;
           border-bottom: 0.2rem solid $Cool-gray;
-          &:hover{
+          &:hover {
             font-weight: 500;
             color: $Purplish-blue;
-            border-bottom: .3rem solid $Purplish-blue;
+            border-bottom: 0.3rem solid $Purplish-blue;
           }
         }
       }
@@ -63,13 +68,13 @@
       align-items: center;
       justify-content: space-between;
       padding: 3.2rem 2rem 2rem;
+      color: #b6c0db;
+      font-weight: 400;
+
       @include respond(phone) {
         padding: 2.4rem 2rem;
-        font-weight: 500;
       }
-      .txt {
-        color: $Cool-gray;
-      }
+
       .price {
         color: $Purplish-blue;
         font-weight: 700;

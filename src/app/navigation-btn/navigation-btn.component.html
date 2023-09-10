@@ -10,6 +10,7 @@
   <button
     [ngStyle]="{ 'background-color': bgColor }"
     class="btn_next"
+    [ngClass]="{ btn_confirm: btn2Text === 'confirm' }"
     (click)="next.next()"
   >
     {{ btn2Text }}

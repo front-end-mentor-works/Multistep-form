@@ -3,7 +3,7 @@
 // @import "variables";
 .sidebar {
   height: 100%;
-  width: 32rem;
+  width: 25rem;
   background-image: url(./../../assets/images/bg-sidebar-desktop.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -34,8 +34,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 4rem;
-      height: 4rem;
+      width: 3.6rem;
+      height: 3.6rem;
       border: 0.2rem solid $Light-gray;
       &-active {
         background-color: lightblue;
@@ -49,14 +49,14 @@
       }
       text-transform: uppercase;
       &-sub {
-        color: rgba($Light-gray, 0.5);
-        font-size: 1.6rem;
+        color: rgba($Pastel-blue, 0.75);
+        font-size: 1.4rem;
         margin-bottom: 0.4rem;
         font-weight: 400;
       }
       &-main {
         color: $Alabaster;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
       }
     }
   }

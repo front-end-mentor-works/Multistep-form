@@ -10,6 +10,9 @@
     }
     &-box {
       margin-bottom: 2.4rem;
+      justify-content: center;
+      align-items: center;
+      display: flex;
     }
   }
   .heading-primary {
@@ -20,11 +23,7 @@
   }
 
   .success_text {
-    color: $Cool-gray;
-    padding: 0 3.2rem;
-    font-weight: 400;
-    @include respond(phone) {
-      padding: 0 1.6rem 25%;
-    }
+    color: rgba($Cool-gray, $alpha: 0.6);
+    padding: 0 2rem 9rem;
   }
 }

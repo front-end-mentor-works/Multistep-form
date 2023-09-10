@@ -36,7 +36,7 @@
       display: inline-block;
       top: 0;
       right: 0;
-      font-size: 14px;
+      font-size: 1.2rem;
       font-weight: 700;
       color: $Strawberry-red;
     }
@@ -46,7 +46,7 @@
       outline: none;
       width: 100%;
       padding: 0.4rem 1rem;
-      height: 6.4rem;
+      height: 4.8rem;
       &:hover {
         cursor: pointer;
         border-color: $Purplish-blue;
@@ -68,7 +68,7 @@
 }
 
 .form_label {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .form_control {
   height: 6rem;

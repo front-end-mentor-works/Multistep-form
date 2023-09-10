@@ -1,18 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
 @import "assets/sass/abstracts/variables";
 @import "assets/sass/abstracts/functions";
 @import "assets/sass/abstracts/mixins";
-@import "assets/sass/base/animations";
-@import "assets/sass/base/base";
-@import "assets/sass/base/typography";
-@import "assets/sass/base/utilities";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  // overflow-x: hidden;
+  background-color: $Magnolia;
+  width: 100%;
+
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: $font-size;
+}
 .container {
-  width: 60%;
-  height: 66rem;
-  margin: 6% auto 0;
+  width: 56%;
+  height: 54rem;
+  margin: 10rem auto 0;
   background-color: $White;
-  padding: 1rem;
+  padding: 1rem 0 1rem 1rem;
   display: flex;
   border-radius: 1rem;
   @include respond(phone) {
@@ -24,8 +75,7 @@
   }
 }
 .main {
-  padding: 4.8rem 12.8rem;
-  width: 75%;
+  padding: 3.6rem 9.6rem;
   position: relative;
   @include respond(phone) {
     width: 100%;
@@ -39,7 +89,7 @@
     &-primary {
       color: $Marine-blue;
       font-weight: 700;
-      font-size: 4rem;
+      font-size: 3.2rem;
       margin-bottom: 1rem;
       @include respond(phone) {
         padding: 3rem 0 0 2rem;
@@ -50,18 +100,17 @@
     &-desc {
       color: $Cool-gray;
       font-weight: 400;
-      font-size: 2rem;
+      font-size: 1.6rem;
       margin-bottom: 3rem;
       @include respond(phone) {
         padding: 0 2rem;
-        margin-bottom: 0.4rem;
+        margin-bottom: 0;
         line-height: 1.5;
       }
     }
   }
 }
 
-@import "assets/sass/layout/grid";
 .step_1,
 .step_2,
 .step_3,
@@ -69,9 +118,10 @@
 .step_5 {
   @include respond(phone) {
     position: absolute;
-    top: -10%;
+    top: -7.2rem;
     margin: 0 4%;
     background-color: $White;
     border-radius: 0.8rem;
+    box-shadow: 0 8px 12px 1px rgba(#000, 0.1);
   }
 }

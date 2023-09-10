@@ -6,12 +6,11 @@ import { Subscription } from 'rxjs';
 import { AppState } from '../app-store/app.reducer';
 import { NavigationBtnComponent } from '../navigation-btn/navigation-btn.component';
 import { Plan, plans } from '../plan';
-import { ToggleSwitchComponent } from '../toggle-switch/toggle-switch.component';
-import { loadPlans, selectPlan } from './store/step2.actions';
-import { addonState } from '../step3/store/step3.reducer';
-import { Addon, Addons } from './plan.service';
-import { Addonlist } from '../step3/step3.component';
 import { selectAddon } from '../step3/store/step3.actions';
+import { addonState } from '../step3/store/step3.reducer';
+import { ToggleSwitchComponent } from '../toggle-switch/toggle-switch.component';
+import { Addon, Addons } from './plan.service';
+import { loadPlans, selectPlan } from './store/step2.actions';
 
 @Component({
   selector: 'app-step2',
@@ -44,7 +43,6 @@ export class Step2Component implements OnInit {
 
         return name === this.selectedPlan?.name;
       });
-      console.log('plans ', plans, newPlans, selectedPlanIndex);
       if (selectedPlanIndex !== -1) {
         this.selectedPlan = newPlans[selectedPlanIndex];
       }
@@ -99,7 +97,12 @@ export class Step2Component implements OnInit {
           ...data.plans,
         };
         this.currentPlanType = data.planType;
-        this.selectedPlan = data.selectedPlan;
+
+        if (!data.selectedPlan) {
+          this.selectedPlan = this.plans[this.currentPlanType][0];
+        } else {
+          this.selectedPlan = data.selectedPlan;
+        }
       });
     this.addonSub$ = this.store
       .select('step3')

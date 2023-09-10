@@ -102,8 +102,9 @@ export interface Addon {
   name: string;
   price: string;
   text: string;
+  active?: boolean;
 }
 export interface Addons {
-  monthly:Addon[];
-  yearly:Addon[];
+  monthly: Addon[];
+  yearly: Addon[];
 }
